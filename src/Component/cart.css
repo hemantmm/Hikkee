@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Mulish;
+  /* font-family: Mulish; */
+  font-family: "Gill Sans", sans-serif;
 }
 
 html {
@@ -41,7 +42,7 @@ header {
   width: 100%;
   line-height: 10rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   border-bottom: 0.1rem solid #9a9191;
   transform: rotate(-0.05deg);
   margin-bottom: 7rem;
@@ -64,6 +65,21 @@ header {
   color: var(--main-color);
   margin-left: 1.5rem;
   font-weight: 400;
+}
+
+.userLogin {
+  display: flex;
+  height: inherit;
+  align-items: center;
+}
+
+.userLogin .user-logo
+{
+  width: 4.2rem;
+  height: 3.5rem;
+  border-radius: 2rem;
+  margin-left: 60rem;
+  cursor: pointer;
 }
 
 .cart-icon {
@@ -315,6 +331,7 @@ header {
   color: var(--icon-color);
 }
 
+
 .card-total button:hover {
   background-color: #0077dc;
 }
@@ -389,3 +406,175 @@ header {
     margin-bottom: 3rem;
   }
 }
+
+
+
+/* .popup
+{
+    position: absolute;
+    border: 2px solid;
+    width: 50%;
+    left: 38rem;
+    height: 50rem;
+    top: 13rem;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+   } */
+
+
+   .page
+   {
+    /* height: 100vh; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -90rem;
+   }
+
+
+   .cover
+   {
+    background-color: white;
+    width: 50em;
+    height: 35em;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(100,156,156);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   }
+
+
+   .alt-login
+   {
+    width: 80%;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+   }
+
+   .alt-login div
+   {
+    width: 45%;
+    height: 90%;
+    border-radius: .25em;
+    background-color: black;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+   }
+
+   .google
+   {
+    background-image: url("../Images/google.jpg");
+   }
+
+   .facebook
+   {
+    background-image: url("../Images/facbook.jpg");
+   }
+
+   input{
+    border: none;
+    background-color: rgb(229,226,226);
+    height: 2em;
+    width: 80%;
+    border-radius: .25em;
+    text-align: center;
+    padding: 2em;
+   }
+
+   input:focus
+   {
+    outline-color: rgb(32,177,255);
+   }
+
+   .login-btn
+   {
+    width: 40%;
+    height: 3em;
+    background-color: rgb(32,177,255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    border-radius: .25em;
+    cursor: pointer;
+    font-size: medium;
+   }
+
+   .logins-btn
+   {
+
+    border: none;
+    background: transparent;
+   }
+
+   .login-btn:hover
+   {
+    transform: scale(1.25);
+   }
+
+   .text
+   {
+    position: relative;
+    bottom: .2em;
+    font-size: large;
+    /* font-family: "Gill Sans", sans-serif; */
+   }
+
+   .hide
+   {
+    /* display: none; */
+    position: absolute;
+    transform: scale(0);
+   }
+
+   .login-popup
+   {
+    position: absolute;
+    height: 32em;
+    width: 50em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: .25em;
+    background-color: rgb(245, 6, 6);
+    color: white;
+    bottom: 0;
+    transform: scale(1);
+    transition: 1.5s;
+   }
+
+   .logs
+   {
+    font-size: x-large;
+   }
+
+   .user
+   {
+    font-size: 2rem;
+    /* color: #fff; */
+   }
+
+
+   .close button
+   {
+    cursor: pointer;
+   }
+
+   .form-email
+   {
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }

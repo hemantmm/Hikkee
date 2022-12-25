@@ -1,15 +1,78 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import cartLogo from "../Images/cartLogo.jpg";
+import userLogo from "../Images/userLogo.jpg"
 import Items from "./Items";
 import { Scrollbars } from 'react-custom-scrollbars-2';
 // import product from "./product";
 import  {CartContext}  from './Cart';
+import { useEffect } from 'react';
+
+// import 
+// import "./cart.css";
+// import './cart.css'
+
+// import { Validator } from 'react';
+import validator from 'validator';
+import './ContextCart.css'
 
 
 
 const ContextCart = () => {
 
-    // const [item,setItem]=useState(product)
+  const [show,setShow]=useState(false)
+
+const [toggle,setToggle]=React.useState(0.5)
+
+const [email,setEmail]=useState('')
+
+const [pass,setPass]=useState('')
+const [emails,setEmails]=useState('')
+
+const [emailError,setEmailError]=useState('')
+
+const handle = () => {
+  localStorage.setItem('Name', emails);
+  localStorage.setItem('Password', pass);
+  setEmails('')
+  setPass('')
+};
+
+
+
+const handleSubmit=(e)=>{
+e.preventDefault()
+  console.log(email);
+}
+
+
+const [popupStyle,showPopup]=useState('hide')
+
+const popup=()=>{
+  showPopup("login-popup")
+  setTimeout(() => {
+    showPopup("hide")
+  }, 3000);
+}
+
+
+useEffect(()=>{
+  setShow(true);
+},[])
+
+
+const validateEmail=(e)=>{
+  let email=e.target.value
+
+  if(validator.isEmail(email))
+  {
+    setEmailError('Valid email')
+  }
+  else
+  {
+    setEmailError('Enter valid email')
+  }
+}
+  
 
     const {item,clearCart,totalItems,totalAmount} = useContext(CartContext)
 
@@ -48,8 +111,14 @@ const ContextCart = () => {
           <h3>continue shopping</h3>
         </div>
 
+        <div className='userLogin'>
+          <img src={userLogo} alt="" onClick={()=>setShow(true)} className='user-logo' />
+          {/* <h2>Eloo</h2> */}
+        </div>
+
+
         <div className="cart-icon">
-          <img src={cartLogo} alt="" />
+          <img src={cartLogo} alt=""  className="blur" />
           <p>{totalItems}</p>
         </div>
       </header>
@@ -69,8 +138,6 @@ const ContextCart = () => {
                     return  <Items key={curItem.id} {...curItem} />
                 })
             }
-
-          
             
             </Scrollbars> 
           </div>
@@ -84,6 +151,51 @@ const ContextCart = () => {
 </div>
 
       </section>
+
+
+
+ {show ?
+<div className="page" id='pages'>
+<div className="cover">
+  <h1>Login</h1>
+  <div className='form-email' onChange={(e)=>validateEmail(e)}>
+  <input className='email' value={emails} type="email" name="email" placeholder='you@gmail.com' onChange={(e)=>setEmails(e.target.value)}  />
+  </div>
+  <input className='password'value={pass} type="password" placeholder='******' name="" onChange={(e)=>setPass(e.target.value)} />
+
+  <div className="login-btn" onClick={handle} >
+    <button onClick={popup} className='logins-btn'>
+    Login
+    </button>
+    </div>
+
+  <p className="text">Or login using</p>
+
+<div className="alt-login">
+  <div className="facebook"></div>
+  <div className="google"></div>
+</div>
+
+<div className={popupStyle}>
+<h3 className='logs'>Login Failed</h3>
+<p className='user'>{emailError}</p>
+</div>
+
+<div className="close">
+  <button onClick={()=>setShow(false)}>Close</button>
+</div>
+</div>
+</div>
+:null} 
+
+
+
+<div className="carts" >
+
+<button onClick={clearCart}>CheckOut</button>
+</div>
+
+
     </>
   )
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Cart from "./Component/Cart";
-import Login from "./Login/Login";
+// import Login from "./Login/Login";
 
 
 const App=()=>{

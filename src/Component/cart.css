@@ -85,10 +85,13 @@ header {
 .cart-icon {
   display: flex;
   text-align: end;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   align-items: center;
-  position: relative;
+  position: absolute;
+  left: 100rem;
+  top: 2rem;
   justify-content: flex-end;
+  cursor: pointer;
 }
 
 .cart-icon img {
@@ -101,8 +104,9 @@ header {
   position: absolute;
   width: 4rem;
   height: 4rem;
-  right: -1.2rem;
-  top: 0.9rem;
+  right: -1.7rem;
+  top: -2rem;
+  /* top: 0.9rem; */
   border-radius: 50%;
   background: #99cbf7;
   color: #fff;
@@ -409,20 +413,6 @@ header {
 
 
 
-/* .popup
-{
-    position: absolute;
-    border: 2px solid;
-    width: 50%;
-    left: 38rem;
-    height: 50rem;
-    top: 13rem;
-    transform: translate(-50%,-50%);
-    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-    background: #fff;
-   } */
-
-
    .page
    {
     /* height: 100vh; */
@@ -578,3 +568,70 @@ header {
     justify-content: center;
     align-items: center;
    }
+
+
+
+
+   .carts
+   {
+    /* height: 100vh; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 44rem;
+    top: 15.5rem;
+    /* overflow: hidden; */
+   }
+
+
+   .carts-box
+   {
+    background-color: white;
+    width: 50em;
+    height: 35em;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(100, 156, 100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   }
+
+  .orderbtn
+  {
+    width: 95%;
+  margin-top: 4rem;
+  text-align: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* padding: 1rem 1rem; */
+  }
+
+  .orderbtn button {
+    border: none;
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    color: #fff;
+    background-color: #349bf3;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  .orderbtn .clear-carts
+  {
+    margin-left: 3rem;
+  background-color: rgb(209, 61, 61);
+  }
+
+  .closes button
+  {
+    cursor: pointer;
+  }

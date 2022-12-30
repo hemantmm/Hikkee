@@ -1,17 +1,12 @@
 import React,{useContext, useState} from 'react'
-import cartLogo from "../Images/cartLogo.jpg";
+// import cartLogo from "../Images/cartLogo.jpg";
+import cartLogo from '../Images/cartLogo.jpg'
 import userLogo from "../Images/userLogo.jpg"
 import Items from "./Items";
 import { Scrollbars } from 'react-custom-scrollbars-2';
-// import product from "./product";
 import  {CartContext}  from './Cart';
 import { useEffect } from 'react';
 
-// import 
-// import "./cart.css";
-// import './cart.css'
-
-// import { Validator } from 'react';
 import validator from 'validator';
 import './ContextCart.css'
 
@@ -20,6 +15,8 @@ import './ContextCart.css'
 const ContextCart = () => {
 
   const [show,setShow]=useState(false)
+
+  const [showCart,setShowCart]=useState(false)
 
 const [toggle,setToggle]=React.useState(0.5)
 
@@ -105,6 +102,8 @@ const validateEmail=(e)=>{
 
   return (
     <>
+
+
  <header>
         <div className="continue-shopping">
           <img src="./images/HikeLogo.jpg" alt="logo" className="arrow-icon" />
@@ -117,8 +116,8 @@ const validateEmail=(e)=>{
         </div>
 
 
-        <div className="cart-icon">
-          <img src={cartLogo} alt=""  className="blur" />
+        <div className="cart-icon" onClick={()=>setShowCart(true)}>
+          <img src={cartLogo}  alt=""  className="blur" />
           <p>{totalItems}</p>
         </div>
       </header>
@@ -159,9 +158,9 @@ const validateEmail=(e)=>{
 <div className="cover">
   <h1>Login</h1>
   <div className='form-email' onChange={(e)=>validateEmail(e)}>
-  <input className='email' value={emails} type="email" name="email" placeholder='you@gmail.com' onChange={(e)=>setEmails(e.target.value)}  />
+  <input className='email' value={emails} type="email" required name="email" placeholder='you@gmail.com' onChange={(e)=>setEmails(e.target.value)}  />
   </div>
-  <input className='password'value={pass} type="password" placeholder='******' name="" onChange={(e)=>setPass(e.target.value)} />
+  <input className='password'value={pass} type="password" required placeholder='******' name="" onChange={(e)=>setPass(e.target.value)} />
 
   <div className="login-btn" onClick={handle} >
     <button onClick={popup} className='logins-btn'>
@@ -189,11 +188,26 @@ const validateEmail=(e)=>{
 :null} 
 
 
+    
+{showCart? <div className="carts" >
+  <div className="carts-box">
 
-<div className="carts" >
+    <h1>Total items : {totalItems}</h1>
 
-<button onClick={clearCart}>CheckOut</button>
+    <h1>Cart Total: ${totalAmount} </h1>
+
+<div className='orderbtn'>
+<button onClick={()=>setShowCart(false)}>Continue shipping</button>
+<button className='clear-carts' onClick={clearCart}>CheckOut</button>
 </div>
+
+<div className="closes">
+  <button onClick={()=>setShowCart(false)}>Close</button>
+</div>
+
+</div>
+</div>:null }
+
 
 
     </>

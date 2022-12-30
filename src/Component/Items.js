@@ -6,8 +6,8 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 // import '../Component/cart.css'
 
-import cartLogo from "../Images/cartLogo.jpg";
-import logo from "../Images/searchLog.jpg";
+import cartLogo from "../images/cartLogo.jpg";
+import logo from "../images/searchLog.jpg";
 // import logo1 from '../images/AppleLogo.jpg'
 // import logo2 from '../images/AppleLogo.jpg'
 

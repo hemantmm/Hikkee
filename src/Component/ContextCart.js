@@ -1,7 +1,7 @@
 import React,{useContext, useState} from 'react'
 // import cartLogo from "../Images/cartLogo.jpg";
-import cartLogo from '../Images/cartLogo.jpg'
-import userLogo from "../Images/userLogo.jpg"
+import cartLogo from '../images/cartLogo.jpg'
+import userLogo from "../images/userLogo.jpg"
 import Items from "./Items";
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import  {CartContext}  from './Cart';

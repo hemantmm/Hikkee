@@ -8,8 +8,8 @@ import { faMinus } from "@fortawesome/free-solid-svg-icons";
 
 // import '../Component/cart.css'
 
-import cartLogo from "../Images/cartLogo.jpg";
-import logo from "../Images/searchLog.jpg";
+import cartLogo from "../images/cartLogo.jpg";
+import logo from "../images/searchLog.jpg";
 // import Items from "./Items";
 import { useState } from "react";
 import product from "./product";
